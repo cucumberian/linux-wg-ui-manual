@@ -14,14 +14,18 @@
 ## проект Wg-easy
 https://github.com/wg-easy/wg-easy
 ### Установка
-1. Установить докер
+1. Покупаем vps, vds сервер на Debian, Ubuntu
+2. Заходим на сервер под рутом
+    ```shell
+    ssh root@<ip адрес сервера>
+    ```
+    Вводим пароль
+3. Установка докера
 
     ```shell
     apt install curl -y
     curl -sSL https://get.docker.com | sh
-    sudo usermod -aG docker $(whoami)
     ```
-    Перезайти в командную оболочку, чтобы изменения в группе пользователей вступили в силу (выйти и зайти на сервер).
 2. Запуск приложения
     ```shell
     docker run -d \
@@ -110,7 +114,7 @@ https://github.com/ngoduykhanh/wireguard-ui/
     - Останавливаем _wireguard-ui_
         Нажимаем в консоли `Ctrl+C`
 
-7. Запускаем службу для _wiregurd_:
+7. Запускаем службу для _wireguard_:
     После запуска web интерфейса у нас создастся файл конфигурации для _wireguard_ по пути `/wtc/wireguard/wg0.conf`. Теперь можно включить и запускать _wireguard_ как сервис, чтобы при перезапуске компьютера работал _wireguard_.
     ```shell
     systemctl enable wg-quick@wg0.service
@@ -200,5 +204,5 @@ https://github.com/ngoduykhanh/wireguard-ui/
     - делимся конфигурационным файлом или qr-кодом с пользователем.
 
 
-## Инструкция для пользовтелей
+## Инструкция для пользователей
 https://timeweb.cloud/docs/timeweb-private-vpn/vpn-wireguard-setup
